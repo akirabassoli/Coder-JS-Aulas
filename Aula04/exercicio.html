@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Solicite um número através do prompt
+        //Verificar se está entre 10 e 50
+        //Caso positivo, mensagem em um alert
+        //caso negativo, mensagem por console
+
+        var numero = prompt("Digite um número")
+        // o valor que volta do prompt é sempre STRING, devemos converter para número para fazer a comparação
+        numero = parseInt(numero)
+
+        if (numero >= 10 && numero <= 50) {
+            alert("O número está entre 10 e 50")
+        }
+        else {
+            console.log("O número está fora do intervalo.")
+        }
+
+
+        //-----------------------------------------------------------------------------------------
+
+        //Função que realiza a subtração do maior pelo menor e exibe o resultado no console
+
+        function subtracaoMaiorMenor(numero1, numero2) {
+            if (numero1 > numero2) {
+                var resultado = (numero1 - numero2)
+                console.log("A subtração de " + numero1 + " - " + numero2 + " é igual a : " + resultado)
+            }
+            else if (numero2 > numero1) {
+                var resultado = (numero2 - numero1)
+                console.log("A subtração de " + numero2 + " - " + numero1 + " é igual a : " + resultado)
+            }
+            else {
+                console.log("Os números são iguais, o resultado é ZERO")
+            }
+        }
+
+        var num1 = parseInt(prompt("Digite o primeiro número"))
+        var num2 = parseInt(prompt("Digite o segundo número"))
+
+        subtracaoMaiorMenor(num1, num2)
+
+
+
+        //----------------------------------
+        //Calculadora de preço
+        var somar = (a, b) => a + b
+        var subtrair = (a, b) => a - b
+        var calcularIcms = (x) => x * 0.21
+
+        var precoProduto = 500
+        var desconto = 50
+
+
+        //Calculo do preço do produto + ICMS - desconto
+        var icms = calcularIcms(precoProduto)
+        var soma = somar(precoProduto, icms)
+        var novoProduto = subtrair(soma, desconto)
+
+        console.log(novoProduto)
+
+
+        //--------------------------------------------------------------------
+
+
+        var calculadora = (a, b, operacao) => {
+
+            if (operacao == "+") {
+                return a + b
+            }
+            if (operacao == "-") {
+                return a - b
+            }
+            if (operacao == "*") {
+                return a * b
+            }
+            if (operacao == "/") {
+                return a / b
+            }
+            else {
+                return 0
+            }
+        }
+
+        console.log(calculadora(50, 5, "+"))
+        console.log(calculadora(50, 5, "-"))
+        console.log(calculadora(50, 5, "*"))
+        console.log(calculadora(50, 5, "/"))
+
+
+    </script>
+</body>
+
+</html>
