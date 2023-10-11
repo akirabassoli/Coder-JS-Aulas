@@ -74,13 +74,29 @@
         }
 
         const pessoa1 = new pessoa("Homer", 39, "Av. Sempre-verde 742")
+        const pessoa2 = new pessoa("Marge", 39, "Av. Sempre-verde 742")
 
         pessoa1.falar();
+        pessoa2.falar();
 
 
-        //----OPERADOR FOR e IN-------------------------------------------------------------------------
+        //----OPERADOR IN -------------------------------------------------------------------------
+        const people = {
+            nome: "Homer",
+            idade: 39,
+            rua: "Av. Sempre-verde, 742"
+        }
 
+        console.log("nome" in people)
+        //retorna true, pois encontra "nome" no objeto people
+        console.log("origem" in people)
+        //retorna false, pois não encontra essa propriedade
 
+        //----OPERADOR FOR IN -------------------------------------------------------------------------
+        //percorre cada propriedade do objeto e mostra no console os valores
+        for (const propriedade in people) {
+            console.log(people[propriedade])
+        }
 
 
 
