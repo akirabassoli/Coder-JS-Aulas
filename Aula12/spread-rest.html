@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //Spread de arrays ------------------------------------
+        const nomes = ["João", "Gabriel", "Juan", "Pipo"]
+
+        console.log(...nomes)
+        console.log(nomes)
+
+        const numeros = [1, 34, 45, 3, 5, 6, 7]
+
+        console.log(Math.max(numeros)) //dessa forma não funciona, retorna NaN
+        console.log(Math.max(...numeros))
+
+        //Spread de objetos -------------------------------------
+
+        const usuario1 = {
+            nome: "Maria",
+            idade: 24,
+            curso: "JavaScript"
+        }
+
+        const usuario2 = {
+            ...usuario1
+        }
+        console.log(usuario2)
+
+        const usuario3 = {
+            ...usuario1,
+            curso: "ReactJS",  //consigo alterar a propriedade que puxou da Maria e add mais uma
+            email: "maria@gmail.com"
+        }
+        console.log(usuario3)
+
+        //REST parameters---------------------------------------------
+
+        function somar(...numeros) { // fazendo assim é possível utilizar inúmeros parametros
+            return numeros.reduce((acc, n) => acc + n, 0)
+            console.log(numeros)
+        }
+
+        console.log(somar(3, 4, 5))
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
