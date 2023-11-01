@@ -48,7 +48,7 @@ setTimeout(() => {
             // if (element.adicionado == true) {
             //     qde++
             // };
-            element.adicionado == true ? qde++ : ""
+            element.adicionado == true && qde++
         });
 
         console.log("A quantidade de cursos no carrinho é de " + qde + " cursos");
