@@ -38,7 +38,7 @@ section h2 {
 }
 
 .cards {
-    background-color: #0c102c;
+    background-color: #323B51;
 
     display: flex;
     padding: 10px;
@@ -46,11 +46,20 @@ section h2 {
     align-items: center;
 }
 
+.card-body {
+    background-color: #262d3d;
+}
+
+.card-title {
+    color: aliceblue;
+}
+
 .card-text {
     min-height: 120px;
     font-size: 15px;
     margin-top: 5px;
     width: 100%;
+    color: aliceblue;
     /*
     text-align: justify; */
 }
