@@ -74,11 +74,43 @@ console.log('---------')
 
 let tarefas = [];
 
+//adicione um input para o usuário inserir o texto, add no HTML tb
 let input = document.getElementById('inputUsuario')
 
-tarefa.addEventListener('click', botaoEnviar)
-function botaoEnviar() {
-    tarefas.push(input)
+//adicione um botao enviar que ao ser clicado insere no array o novo item
+let botaoEnviar = document.getElementById('botaoEnviar')
+
+botaoEnviar.onclick = () => {
+    tarefas.push(input.value)
+
 }
 
 console.log(tarefas)
+
+//adicione um botao visualizar para exibir todos os itens da lista na tela
+
+let botaoVisualizar = document.getElementById('botaoVisualizar')
+
+botaoVisualizar.onclick = () => {
+    let papi = document.getElementById('listaTarefas')
+
+    for (const tarefa of tarefas) {
+        let li = document.createElement('li');
+        li.innerHTML = tarefa;
+        papi.append(li);
+    }
+    document.body.appendChild(papi)
+}
+
+//adicione um botao limpar para apagar todos os itens da lista
+
+let botaoApagar = document.getElementById('botaoApagar')
+
+botaoApagar.onclick = () => {
+    tarefas = [];
+}
+
+
+
+
+

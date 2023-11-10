@@ -66,3 +66,10 @@ botao2.onclick = () => {
 function funcaoOpcao3() {
     alert("Resposta ao evento Opção 3")
 }
+
+console.log('--------------')
+console.log('==>Formulário')
+
+//################################### ver novamente a aula
+
+
