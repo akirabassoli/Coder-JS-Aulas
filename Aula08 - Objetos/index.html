@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        //----OBJETOS-------------------------------------------------------------------------
+        // let fruta = {
+        //     nome: "Maçã",
+        //     cor: "Vermelha",
+        //     peso: 150,
+        //     tipo: "Fruta"
+
+        // }
+
+        // console.log(fruta)
+
+        // fruta.nome = "Banana"
+        // fruta["peso"] = 250
+
+        // console.log(fruta)
+
+        //----CONSTRUTOR E NEW-------------------------------------------------------------------------
+
+        function xicara(cor, forma, peso, capacidade) {
+            this.cor = cor;
+            this.forma = forma;
+            this.peso = peso;
+            this.capacidade = capacidade;
+        }
+
+        const xicara1 = new xicara("branca", "redonda", 5, 10);
+        const xicara2 = new xicara("rosa", "quadrada", 8, 15);
+
+        console.log(xicara1)
+        console.log(xicara2)
+        //---------------------------------------------
+        function fruta(nome, cor, peso, tipo) {
+            this.nome = nome;
+            this.cor = cor;
+            this.peso = peso;
+            this.tipo = tipo;
+        }
+        const fruta1 = new fruta("Manga", "amarela", 100, "manga")
+
+        console.log(fruta1)
+
+        console.log("Quantidade de caracteres: " + fruta1.nome.length)
+        console.log("Cor da fruta: " + fruta1.cor.toUpperCase())
+        console.log("Tipo: " + fruta1.tipo.toLowerCase())
+
+        for (const propriedade in fruta) {
+            const nomeDaPropriedade = propriedade
+            const valor = fruta[propriedade]
+
+            console.log(nomeDaPropriedade + "=" + valor)
+
+        }
+
+
+        //----METODOS E OPERAÇOES COM OBJETOS-------------------------------------------------------------------------
+
+        function pessoa(nome, idade, rua) {
+            this.nome = nome;
+            this.idade = idade;
+            this.rua = rua;
+            this.falar = function () {
+                console.log("Olá, sou " + this.nome + ", tenho " + this.idade + " anos.")
+            }
+        }
+
+        const pessoa1 = new pessoa("Homer", 39, "Av. Sempre-verde 742")
+        const pessoa2 = new pessoa("Marge", 39, "Av. Sempre-verde 742")
+
+        pessoa1.falar();
+        pessoa2.falar();
+
+
+        //----OPERADOR IN -------------------------------------------------------------------------
+        const people = {
+            nome: "Homer",
+            idade: 39,
+            rua: "Av. Sempre-verde, 742"
+        }
+
+        console.log("nome" in people)
+        //retorna true, pois encontra "nome" no objeto people
+        console.log("origem" in people)
+        //retorna false, pois não encontra essa propriedade
+
+        //----OPERADOR FOR IN -------------------------------------------------------------------------
+        //percorre cada propriedade do objeto e mostra no console os valores
+        for (const propriedade in people) {
+            console.log(people[propriedade])
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

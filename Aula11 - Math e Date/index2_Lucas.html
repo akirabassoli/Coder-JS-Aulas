@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Crie uma função que receba uma data de aniversário
+        //Calcule quantos dias falta para chegar esse aniversário
+
+        function calcularDiasAniversario(dataAniversario) {
+
+            const dataAtual = new Date()
+
+            //20/05/1993  -->   20/05/2023
+            // Verifica se o aniversário já ocorreu no ano atual
+            dataAniversario.setFullYear(dataAtual.getFullYear());  //20/05/2023    
+
+            //20/05/2023  menor 24/10/2023
+            // Se o aniversário já passou no ano atual, ajusta o ano para o próximo ano
+            if (dataAniversario < dataAtual) {
+                dataAniversario.setFullYear(dataAtual.getFullYear() + 1); //20/05/2024
+            }
+
+            // Calcula a diferença em milissegundos
+            const diferencaEmMilissegundos = dataAniversario - dataAtual;
+
+            // Converte a diferença em milissegundos para dias
+            const diasFaltantes = Math.ceil(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
+
+            return diasFaltantes
+        }
+
+        // Exemplo de uso: Vamos supor que o aniversário seja em 15 de maio.
+        const dataAniversario = new Date(2023, 9, 27); // Mês 4 representa maio
+        // (lembrando que os meses são baseados em zero).
+        const diasFaltantes = calcularDiasAniversario(dataAniversario);
+
+        console.log(diasFaltantes)
+        //------------------------------------------------------------------------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

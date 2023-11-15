@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // DATE ------------------------------------------------------------------
+        console.log(new Date())
+        console.log(new Date(2023, 2, 15)) // 0- Janeiro / 1 - Fevereiro / 2 - Março
+
+        // ATIVIDADE -------------------------------------------------------
+        // DATA DO SEU NASCIMENTO
+        const dataNascimento = new Date(1986, 5, 26)
+        console.log(dataNascimento)
+
+        //DESCOBRIR SIGNO
+
+        function descobrirSigno(dataNascimento) {
+            const dia = dataNascimento.getDate() //pega apenas o dia
+            const mes = dataNascimento.getMonth() + 1 //pega apenas o dia, e somamos +1 para equiparar ao calendario normal
+
+            const signos = [
+                { signo: "Áries", inicio: { mes: 3, dia: 21 }, fim: { mes: 4, dia: 20 } },
+                { signo: "Touro", inicio: { mes: 4, dia: 21 }, fim: { mes: 5, dia: 20 } },
+                { signo: "Gêmeos", inicio: { mes: 5, dia: 21 }, fim: { mes: 6, dia: 20 } },
+                { signo: "Câncer", inicio: { mes: 6, dia: 21 }, fim: { mes: 7, dia: 22 } },
+                { signo: "Leão", inicio: { mes: 7, dia: 23 }, fim: { mes: 8, dia: 22 } },
+                { signo: "Virgem", inicio: { mes: 8, dia: 23 }, fim: { mes: 9, dia: 22 } },
+                { signo: "Libra", inicio: { mes: 9, dia: 23 }, fim: { mes: 10, dia: 22 } },
+                { signo: "Escorpião", inicio: { mes: 10, dia: 23 }, fim: { mes: 11, dia: 21 } },
+                { signo: "Sagitário", inicio: { mes: 11, dia: 22 }, fim: { mes: 12, dia: 21 } },
+                { signo: "Capricórnio", inicio: { mes: 12, dia: 22 }, fim: { mes: 1, dia: 19 } },
+                { signo: "Aquário", inicio: { mes: 1, dia: 20 }, fim: { mes: 2, dia: 18 } },
+                { signo: "Peixes", inicio: { mes: 2, dia: 19 }, fim: { mes: 3, dia: 20 } }
+            ];
+
+            for (const signosInfo of signos) {
+
+                if ((mes == signosInfo.inicio.mes && dia >= signosInfo.inicio.dia) ||
+                    (mes == signosInfo.fim.mes && dia <= signosInfo.fim.dia)) {
+                    return signosInfo.signo
+                }
+            }
+            return "Signo desconhecido"
+        }
+
+        const signo = descobrirSigno(dataNascimento)
+
+        console.log(signo)
+
+        //FORMATOS 
+        console.log("---Receber uma data e mostrar de vários formatos")
+        function receberData(dataNascimento) {
+            const data = dataNascimento
+
+
+            console.log(data.toDateString())
+            console.log(data.toLocaleString())
+            console.log(data.toLocaleDateString())
+            console.log(data.toTimeString())
+        }
+        receberData(dataNascimento)
+
+        // ---------------------------------------------------------------------------------------------
+
+        //DIFERENÇA ENTRE DATAS
+
+        // Receba uma data e calcule quantos dias faltam para chegar esse aniversário
+        console.log("------------------------")
+        const dataHoje = new Date()
+
+
+        function calculoAniversario(dataAniversario) {
+
+            if (dataAniversario < dataHoje) {
+                dataAniversario.setFullYear(dataHoje.getFullYear() + 1)
+            }
+
+            //transforma calculo da diferença de datas(milisegundos) em dias
+            const diferencaEmDias = Math.ceil((dataAniversario - dataHoje) / (1000 * 60 * 60 * 24))
+
+            return diferencaEmDias
+        }
+
+
+        const dataAniversario = new Date(dataHoje.getFullYear(), 10, 20)
+
+
+
+        const diasFaltantes = calculoAniversario(dataAniversario, dataHoje)
+        console.log(diasFaltantes)
+
+        //------------------------------------------------------------------------------------------------------
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

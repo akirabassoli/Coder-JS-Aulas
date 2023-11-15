@@ -1,4 +1,3 @@
-
 function salvarItem() {
 
     const novoItem = document.getElementById("item").value
@@ -27,6 +26,7 @@ function salvarItem() {
         alert("Por favor, insira um item válido.")
     }
 }
+
 
 function visualizarItens() {
     const listaCompras = document.getElementById('listaCompras');
